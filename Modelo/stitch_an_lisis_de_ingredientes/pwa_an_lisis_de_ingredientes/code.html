@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="#f48c25" name="theme-color"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Análisis de Imagen - FoodAI</title>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: contain;
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .safe-top {
+            padding-top: env(safe-area-inset-top);
+        }
+        /* Custom scrollbar for better mobile feel if needed */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 h-full flex flex-col overflow-hidden">
+<!-- Header with Safe Area support -->
+<header class="sticky top-0 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10 safe-top">
+<div class="flex items-center justify-between p-4 max-w-md mx-auto w-full">
+<button class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors active:scale-90">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Análisis de Imagen</h1>
+<button class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors active:scale-90">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Scrollable content optimized for mobile touch -->
+<main class="flex-1 overflow-y-auto overscroll-contain">
+<div class="max-w-md mx-auto px-4 pb-48">
+<!-- Image Preview Card -->
+<div class="mt-6 relative overflow-hidden rounded-xl aspect-video bg-primary/5 border border-primary/10 shadow-sm">
+<img alt="Ingredientes en la encimera" class="w-full h-full object-cover" data-alt="Varios vegetales frescos sobre una mesa de madera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHMP67GRPqDEw0DRK6uN8VPFd_oCTvmcIjJ9hvBF0gr-PNImzYm6s-eb-7hrVNs8VVmngDhJUDUYcQiKKRvk6Y2V_nwIffiNc7N3_tbdDNdJeeS1fXHU60s7a-S4Sqx_dAzvWWgpJp1tB2cky1XT6TYouOap8CA5tguZq1g302rOe2TDWMCp1fKskrsnLIAUxctadRfgEJFHK4j_YWzwEg6avW_nSuY3evxurJJJo0NMW4VBAZ-_cQCZ83J89gE05vQ1EPTWOD_Idh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest ring-1 ring-white/20">Imagen Procesada</span>
+</div>
+</div>
+<!-- Section Title -->
+<div class="mt-8 flex items-center justify-between">
+<h2 class="text-xl font-bold">Ingredientes Detectados</h2>
+<span class="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">3 encontrados</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Confirma los ingredientes que quieres usar.</p>
+<!-- Ingredients List - Optimized for mobile tap targets and scrolling -->
+<div class="mt-6 space-y-3">
+<!-- Ingredient Item -->
+<label class="flex items-center gap-4 bg-white dark:bg-slate-800/80 p-4 rounded-2xl border border-primary/5 shadow-sm active:bg-primary/5 transition-colors cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input checked="" class="h-6 w-6 rounded-full border-2 border-primary/30 text-primary focus:ring-primary focus:ring-offset-background-light dark:bg-slate-900 cursor-pointer transition-all checked:border-primary" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-slate-800 dark:text-slate-200">Tomates Cherry</p>
+</div>
+<div class="flex gap-1">
+<button class="p-2 text-slate-400 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-500 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</label>
+<!-- Ingredient Item -->
+<label class="flex items-center gap-4 bg-white dark:bg-slate-800/80 p-4 rounded-2xl border border-primary/5 shadow-sm active:bg-primary/5 transition-colors cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input checked="" class="h-6 w-6 rounded-full border-2 border-primary/30 text-primary focus:ring-primary focus:ring-offset-background-light dark:bg-slate-900 cursor-pointer transition-all checked:border-primary" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-slate-800 dark:text-slate-200">Huevos Orgánicos</p>
+</div>
+<div class="flex gap-1">
+<button class="p-2 text-slate-400 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-500 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</label>
+<!-- Ingredient Item -->
+<label class="flex items-center gap-4 bg-white dark:bg-slate-800/80 p-4 rounded-2xl border border-primary/5 shadow-sm active:bg-primary/5 transition-colors cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input checked="" class="h-6 w-6 rounded-full border-2 border-primary/30 text-primary focus:ring-primary focus:ring-offset-background-light dark:bg-slate-900 cursor-pointer transition-all checked:border-primary" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-slate-800 dark:text-slate-200">Leche Entera</p>
+</div>
+<div class="flex gap-1">
+<button class="p-2 text-slate-400 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-500 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</label>
+<!-- Add More Button -->
+<button class="w-full flex items-center justify-center gap-2 p-4 rounded-2xl border-2 border-dashed border-primary/30 text-primary font-bold hover:bg-primary/5 active:bg-primary/10 transition-all mt-4 mb-4">
+<span class="material-symbols-outlined">add_circle</span>
+                    Añadir ingrediente manualmente
+                </button>
+</div>
+</div>
+</main>
+<!-- Floating Action Area (Sticky PWA Footer) -->
+<div class="fixed bottom-0 left-0 right-0 z-30 pointer-events-none">
+<div class="bg-gradient-to-t from-background-light dark:from-background-dark via-background-light/95 dark:via-background-dark/95 to-transparent pt-12 pb-2 pointer-events-auto">
+<div class="max-w-md mx-auto px-4">
+<!-- Prominent PWA Action Button -->
+<button class="w-full bg-primary text-white font-bold py-5 rounded-2xl shadow-[0_8px_30px_rgb(244,140,37,0.3)] flex items-center justify-center gap-3 transition-transform active:scale-[0.97] ring-1 ring-white/10">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1">restaurant_menu</span>
+<span class="text-lg">Buscar Recetas</span>
+</button>
+</div>
+<!-- Navigation Bar with Safe Area -->
+<nav class="flex justify-around items-center max-w-md mx-auto mt-4 px-4 border-t border-primary/10 bg-background-light dark:bg-background-dark pt-2 safe-bottom">
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-primary active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">photo_camera</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Escanear</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Recetas</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Perfil</span>
+</a>
+</nav>
+</div>
+</div>
+</body></html>

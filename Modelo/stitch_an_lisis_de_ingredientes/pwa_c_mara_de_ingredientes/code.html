@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: 100dvh;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        /* Hide scrollbars for a clean PWA feel */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .safe-top {
+            padding-top: env(safe-area-inset-top);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-hidden">
+<div class="relative flex h-[100dvh] w-full flex-col">
+<!-- Header: Optimized for PWA with safe area -->
+<header class="safe-top flex items-center bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl px-4 py-3 justify-between z-20 border-b border-slate-200 dark:border-slate-800">
+<button class="flex size-11 items-center justify-center rounded-full active:bg-slate-100 dark:active:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Escanea tus ingredientes</h1>
+<button class="flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">info</span>
+</button>
+</header>
+<!-- Camera Viewport (Simulated) -->
+<main class="relative flex-1 bg-slate-900 overflow-hidden">
+<!-- Simulated Camera Feed Image -->
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-90" data-alt="Interior of a modern refrigerator filled with fresh vegetables and fruits" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFkuLfDNldrYnhJ0N9psWcTqo8Nce83uiByNUDqGFVXeprC44PXcTD-M8TgMaAHTGiICq9v1h_v10H0xnE_9JCmhXMmjQ7WheBGmgFNB7oBCpikTU9wXsbSYoP4JrqoRcT-fzraam9-9pBI0ZkJKIusQfP05qmI5ZmX1LicRezZfEaWAhkrg073UTftf7Q_68oW3ldzHL_DQnorXScmjJEOoZ1_DB0hD4WMt9v0OCWMnQrvpXWfTAc2jC7Jui2am94Uqkzqao3x62A')">
+</div>
+<!-- Scanning Overlay & Bounding Boxes -->
+<div class="absolute inset-0 pointer-events-none">
+<!-- Object Detection Box 1 -->
+<div class="absolute top-[20%] left-[15%] w-32 h-32 border-2 border-primary rounded-xl shadow-[0_0_15px_rgba(244,140,37,0.4)]">
+<div class="absolute -top-7 left-0 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-t-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    TOMATE
+                </div>
+</div>
+<!-- Object Detection Box 2 -->
+<div class="absolute top-[45%] right-[20%] w-40 h-28 border-2 border-primary/60 rounded-xl">
+<div class="absolute -top-7 left-0 bg-primary/60 text-white text-[10px] font-bold px-2 py-1 rounded-t-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] animate-spin">sync</span>
+                    PROCESANDO...
+                </div>
+</div>
+<!-- Scanning Line Animation Simulation (Static) -->
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-70 shadow-[0_0_20px_rgba(244,140,37,1)]"></div>
+</div>
+<!-- Detection Status Bar -->
+<div class="absolute bottom-6 left-0 right-0 px-8 flex justify-center pointer-events-none">
+<div class="bg-black/60 backdrop-blur-md rounded-full px-5 py-2.5 flex items-center gap-3 border border-white/20">
+<div class="size-2 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(244,140,37,0.8)]"></div>
+<p class="text-white text-xs font-semibold tracking-wide">Detectando ingredientes...</p>
+</div>
+</div>
+</main>
+<!-- Camera Controls: PWA Friendly Large Hit Areas -->
+<section class="bg-white dark:bg-background-dark px-8 py-6 flex items-center justify-between z-10">
+<!-- Gallery Button -->
+<button class="flex flex-col items-center gap-1.5 group active:scale-95 transition-transform min-w-[64px]">
+<div class="flex size-14 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-2xl">image</span>
+</div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Galería</span>
+</button>
+<!-- Shutter Button: Main Action -->
+<div class="relative">
+<button class="flex size-24 items-center justify-center rounded-full border-4 border-primary/20 p-1.5 active:scale-90 transition-all duration-150">
+<div class="size-full rounded-full bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/30">
+<span class="material-symbols-outlined text-4xl">photo_camera</span>
+</div>
+</button>
+</div>
+<!-- Flash/Settings Toggle -->
+<button class="flex flex-col items-center gap-1.5 group active:scale-95 transition-transform min-w-[64px]">
+<div class="flex size-14 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-2xl">flash_on</span>
+</div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Flash</span>
+</button>
+</section>
+<!-- Bottom Navigation Bar: Modern Floating Style or Fixed Base -->
+<nav class="safe-bottom flex gap-2 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark px-4 pb-2 pt-2 z-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-primary" href="#">
+<div class="flex h-7 items-center justify-center">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1">photo_camera</span>
+</div>
+<p class="text-[10px] font-bold leading-none tracking-tight">Escanear</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-slate-400 dark:text-slate-500 active:bg-slate-50 dark:active:bg-slate-800/50 rounded-xl transition-colors" href="#">
+<div class="flex h-7 items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">menu_book</span>
+</div>
+<p class="text-[10px] font-medium leading-none tracking-tight">Recetas</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-slate-400 dark:text-slate-500 active:bg-slate-50 dark:active:bg-slate-800/50 rounded-xl transition-colors" href="#">
+<div class="flex h-7 items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">person</span>
+</div>
+<p class="text-[10px] font-medium leading-none tracking-tight">Perfil</p>
+</a>
+</nav>
+</div>
+</body></html>

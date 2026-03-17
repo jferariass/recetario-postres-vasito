@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="#f48c25" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { 
+            font-family: 'Be Vietnam Pro', sans-serif; 
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: none;
+        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+        .safe-top { padding-top: env(safe-area-inset-top); }
+        /* Smooth scrolling for mobile accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-smooth { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top App Bar - Fixed for PWA feel -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 justify-between border-b border-primary/10 safe-top">
+<button aria-label="Volver" class="text-slate-900 dark:text-slate-100 flex size-12 items-center justify-center rounded-full active:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center truncate px-2">Detalle de la Receta</h2>
+<button aria-label="Compartir" class="text-slate-900 dark:text-slate-100 flex size-12 items-center justify-center rounded-full active:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</header>
+<main class="flex-1">
+<!-- Hero Image -->
+<div class="@container">
+<div class="px-0 @[480px]:px-4 @[480px]:py-3">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-slate-200 dark:bg-slate-800 @[480px]:rounded-xl min-h-[380px] shadow-lg relative" data-alt="Delicious fresh salmon salad with vegetables and seeds" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7qakobfGBbBKvihCVLpgdlHNibo5fpU0EZF63sQIURe4MgptDb_oquqc9O_2ZWrTSRYYvsRn6wZlomNROXGNl2uNvSAYaj61LgdKEeDJSL2pgIyuLJg3NUdEt3gIHSyfdPhpUpNQMDYU71R4n3Fvu1ZGc8KzPiYjt1Y23Yb5J-VzetPWxaUoKE4_nK7n4AetrocEWBVHk9q6zETgi8qewQoNU95ZiOLinVhbMjZuVw5vkS9EvRU7ZGEhUQ9O0O4jr4U3aLagafpH0");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="relative p-6 pb-8">
+<span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Saludable</span>
+<h1 class="text-white text-3xl font-bold leading-tight mt-2">Bowl de Salmón y Quinoa con Aguacate</h1>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Info Stats -->
+<div class="flex flex-wrap gap-3 px-4 py-6" role="list">
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-primary/20 bg-primary/5 p-4 items-center" role="listitem">
+<span aria-hidden="true" class="material-symbols-outlined text-primary">schedule</span>
+<p class="text-slate-900 dark:text-slate-100 text-xl font-bold">25</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Minutos</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-primary/20 bg-primary/5 p-4 items-center" role="listitem">
+<span aria-hidden="true" class="material-symbols-outlined text-primary">local_fire_department</span>
+<p class="text-slate-900 dark:text-slate-100 text-xl font-bold">420</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Calorías</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-primary/20 bg-primary/5 p-4 items-center" role="listitem">
+<span aria-hidden="true" class="material-symbols-outlined text-primary">restaurant</span>
+<p class="text-slate-900 dark:text-slate-100 text-xl font-bold">Fácil</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Dificultad</p>
+</div>
+</div>
+<!-- Ingredients Section -->
+<section aria-labelledby="ingredients-heading" class="px-4 py-4">
+<div class="flex justify-between items-baseline mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold" id="ingredients-heading">Ingredientes</h2>
+<p class="text-primary text-sm font-semibold bg-primary/10 px-3 py-1 rounded-full">Tienes 4/6</p>
+</div>
+<div class="space-y-3">
+<!-- Ingredient Item (Owned) -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 shadow-sm transition-all active:scale-[0.98]">
+<div class="flex items-center gap-3">
+<div class="flex size-6 items-center justify-center rounded-full bg-green-500 text-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-slate-700 dark:text-slate-200 font-medium">150g de Salmón fresco</span>
+</div>
+<span class="text-slate-400 text-xs font-medium uppercase tracking-tighter">En despensa</span>
+</div>
+<!-- Ingredient Item (Owned) -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 shadow-sm transition-all active:scale-[0.98]">
+<div class="flex items-center gap-3">
+<div class="flex size-6 items-center justify-center rounded-full bg-green-500 text-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-slate-700 dark:text-slate-200 font-medium">1 taza de Quinoa cocida</span>
+</div>
+<span class="text-slate-400 text-xs font-medium uppercase tracking-tighter">En despensa</span>
+</div>
+<!-- Ingredient Item (Missing) -->
+<button class="w-full flex items-center justify-between p-4 rounded-xl bg-primary/5 border border-primary/20 shadow-sm active:bg-primary/10 transition-colors">
+<div class="flex items-center gap-3 text-left">
+<div class="flex size-6 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+<span class="text-slate-900 dark:text-slate-100 font-bold">1 Aguacate maduro</span>
+</div>
+<span class="text-primary text-sm font-bold flex items-center gap-1">
+                    Comprar <span class="material-symbols-outlined text-xs">shopping_cart</span>
+</span>
+</button>
+<!-- Ingredient Item (Owned) -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex size-6 items-center justify-center rounded-full bg-green-500 text-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-slate-700 dark:text-slate-200 font-medium">Mix de hojas verdes</span>
+</div>
+<span class="text-slate-400 text-xs font-medium uppercase tracking-tighter">En despensa</span>
+</div>
+<!-- Ingredient Item (Missing) -->
+<button class="w-full flex items-center justify-between p-4 rounded-xl bg-primary/5 border border-primary/20 shadow-sm active:bg-primary/10 transition-colors">
+<div class="flex items-center gap-3 text-left">
+<div class="flex size-6 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+<span class="text-slate-900 dark:text-slate-100 font-bold">Semillas de sésamo</span>
+</div>
+<span class="text-primary text-sm font-bold flex items-center gap-1">
+                    Comprar <span class="material-symbols-outlined text-xs">shopping_cart</span>
+</span>
+</button>
+</div>
+</section>
+<!-- Preparation Steps -->
+<section aria-labelledby="steps-heading" class="px-4 py-10 bg-slate-50 dark:bg-slate-900/50">
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold mb-8" id="steps-heading">Pasos de preparación</h2>
+<div class="space-y-10 relative">
+<!-- Vertical Line Connector -->
+<div class="absolute left-5 top-2 bottom-2 w-0.5 bg-primary/20"></div>
+<!-- Step 1 -->
+<div class="relative flex gap-6">
+<div class="z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white font-bold shadow-lg shadow-primary/30">1</div>
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-lg mb-1">Preparar la base</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Lava la quinoa bajo agua fría y cuécela siguiendo las instrucciones del paquete. Déjala enfriar un poco antes de montar el bowl.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex gap-6">
+<div class="z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white font-bold shadow-lg shadow-primary/30">2</div>
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-lg mb-1">Cocinar el salmón</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Sazona el salmón con sal y pimienta. En una sartén con una gota de aceite, séllalo 3-4 minutos por cada lado hasta que esté dorado por fuera y jugoso por dentro.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex gap-6">
+<div class="z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white font-bold shadow-lg shadow-primary/30">3</div>
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-lg mb-1">Montaje final</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Coloca las hojas verdes, añade la quinoa, el salmón troceado y el aguacate laminado. Esparce las semillas de sésamo y tu aliño favorito.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Nutritional Information -->
+<section aria-labelledby="nutrition-heading" class="px-4 py-8 border-t border-slate-200 dark:border-slate-800">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-6" id="nutrition-heading">Información Nutricional <span class="text-slate-400 font-normal text-sm block mt-1">(por ración)</span></h2>
+<div class="grid grid-cols-4 gap-3">
+<div class="bg-white dark:bg-slate-800 p-3 py-4 rounded-xl text-center border border-slate-100 dark:border-slate-700 shadow-sm">
+<p class="text-primary font-bold text-lg">28g</p>
+<p class="text-[9px] text-slate-500 font-bold uppercase tracking-wider mt-1">Proteínas</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 py-4 rounded-xl text-center border border-slate-100 dark:border-slate-700 shadow-sm">
+<p class="text-primary font-bold text-lg">34g</p>
+<p class="text-[9px] text-slate-500 font-bold uppercase tracking-wider mt-1">Carbohid.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 py-4 rounded-xl text-center border border-slate-100 dark:border-slate-700 shadow-sm">
+<p class="text-primary font-bold text-lg">18g</p>
+<p class="text-[9px] text-slate-500 font-bold uppercase tracking-wider mt-1">Grasas</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 py-4 rounded-xl text-center border border-slate-100 dark:border-slate-700 shadow-sm">
+<p class="text-primary font-bold text-lg">6g</p>
+<p class="text-[9px] text-slate-500 font-bold uppercase tracking-wider mt-1">Fibra</p>
+</div>
+</div>
+</section>
+<!-- Extra padding for scrolling content above sticky bar -->
+<div class="h-24"></div>
+</main>
+<!-- Sticky Bottom Action - Fixed with safe area padding for PWAs -->
+<footer class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-xl border-t border-primary/10 safe-bottom z-50">
+<button class="w-full bg-primary text-white h-14 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:opacity-95 active:scale-[0.97] transition-all shadow-xl shadow-primary/30">
+<span aria-hidden="true" class="material-symbols-outlined">skillet</span>
+        Cocinar ahora
+    </button>
+</footer>
+</body></html>
